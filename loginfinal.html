@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>loginmywebsite</title>
+    <style>
+        .main {
+            background-color: rgb(63, 238, 244);
+            margin-left: 2px;
+            margin-right: 2px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 1240px;
+            height: 570px;
+            border: none;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main2 {
+            background-color: rgb(28, 71, 110);
+            width: 550px;
+            border-radius: 20px;
+            padding: 10px;
+            padding-left: 10px;
+            padding-top: 20px;
+        }
+        .formdesign {
+            margin-left: 20px;
+            padding-left: 10px;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+        .submit {
+            margin-left: 30px;
+            height: 25px;
+            font-size: large;
+            font-weight: bold;
+            border-radius: 6px;
+            color: rgb(14, 4, 4);
+            border: none;
+            background-color: rgb(150, 244, 244);
+            cursor: pointer;
+        }
+        .submit:hover {
+            background-color: rgb(16, 16, 21);
+            color: blue;
+            opacity: 0.5;
+            transition: 0.2s;
+        }
+        .submit:active {
+            opacity: 0.5;
+            background-color: rgb(171, 110, 232);
+            color: white;
+            transition: 0.2s;
+        }
+
+        .error {
+            color: #ff4d4d;
+            font-size: 13px;
+            margin-left: 8px;
+            display: inline-block;
+        }
+
+        /* small responsive tweak so it looks okay on smaller viewports */
+        @media (max-width: 700px) {
+            .main { width: auto; height: auto; padding: 20px; }
+            .main2 { width: auto; padding: 20px; }
+        }
+        .signup {
+            color: white;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 2opx;
+        }
+        .signup:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .signup:active {
+            color: aqua;
+            opacity: 0.5;
+            transition: 0.2s;
+        }
+        .signup a {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="main2">
+            <form id="login" onsubmit="return false;">
+                <div class="formdesign">
+                    Username:
+                    <input type="text" id="name" name="name" placeholder="your name" />
+                    <span id="nameerror" class="error"></span>
+                </div>
+
+                <div class="formdesign">
+                    User email:
+                    <input type="email" id="email" name="email" placeholder="Valid Email" />
+                    <span id="emailerror" class="error"></span>
+                </div>
+
+                <div class="formdesign">
+                    Password:
+                    <input type="password" id="password" name="password" placeholder="Valid Password" />
+                    <span id="passworderror" class="error"></span>
+                </div>
+
+                <button type="button" class="submit" onclick="confirmlogin()">Submit</button>
+            </form>
+            <div class="signup">
+                <a href="signup.html" target="_blank">Not a member.Sign up.</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function confirmlogin() {
+            document.getElementById("nameerror").textContent = "";
+            document.getElementById("emailerror").textContent = "";
+            document.getElementById("passworderror").textContent = "";
+
+            let isvalid = true;
+
+            const name = document.getElementById("name").value.trim();
+            if (name === "") {
+                document.getElementById("nameerror").textContent = "Name is required.";
+                isvalid = false;
+            }
+            const email = document.getElementById("email").value.trim();
+            const emailpattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (email === "") {
+                document.getElementById("emailerror").textContent = "Email is required.";
+                isvalid = false;
+            } else if (!emailpattern.test(email)) {
+                document.getElementById("emailerror").textContent = "Invalid email format.";
+                isvalid = false;
+            }
+            const password = document.getElementById("password").value.trim();
+            if (password === "") {
+                document.getElementById("passworderror").textContent = "Password is required.";
+                isvalid = false;
+            } else if (password.length < 9) {
+                document.getElementById("passworderror").textContent = "Password must be at least 9 characters.";
+                isvalid = false;
+            }
+            if (isvalid) {
+                alert("Hooray! You are a valid user");
+                 window.location.href = "webdev.html";
+            }
+        }
+    </script>
+</body>
+</html>

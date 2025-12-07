@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signuppage</title>
+</head>
+<style>
+    body {
+        background-color: aqua;
+        margin: 0;
+        padding: top;
+    }
+    .main{
+        text-align: center;
+        width: 1250;
+        color: blue;
+        background-color: rgb(120, 185, 243);
+        padding: 40px;
+        border-radius: 20px;
+        border: none;
+        margin-top: 5px;
+
+    }
+    .putin {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        margin-left: none;
+    }
+    .masterbox {
+        margin: 20px;
+        background-color: rgb(86, 236, 236);
+        border-radius: 20px;
+        padding: 10px;
+    }
+    .signup_ {
+        text-align: center;
+        height: 30px;
+    }
+    .signup {
+        color: white;
+        height: 40px;
+        width: 80px;
+        background-color: rgb(86, 39, 216);
+        border: none;
+        border-radius: 10px;
+    }
+    .signup:hover {
+         background-color: rgb(218, 53, 221);
+  color: rgb(139, 9, 100);
+  opacity :0.5;
+  transition: 0.2s;
+  box-shadow:  5px 5px 15px 0px rgba(0, 0, 128, 0.4);
+    }
+    .signup:active {
+        opacity: 0.5;
+  background-color: rgb(171, 110, 232);
+  color: white;
+  transition:0.2s;
+    }
+    .login {
+        text-align: center;
+        margin: 30px;
+    }
+
+</style>
+<body>
+    <div class="main">
+        <h1>Create account</h1>
+    </div>
+    <div class="masterbox">
+<div class="putin">
+    <label>Name</label>
+    <input type ="text" placeholder="valid name"><br>
+    </div>
+    <div class="putin">
+    <label>Email</label>
+    <input type ="email" placeholder="valid email">
+    </div>
+    <div class="putin">
+    <label>password</label>
+    <input type ="password" placeholder="create a strong password">
+    </div>
+    <div class="putin">
+    <label>Confirm password</label>
+    <input type ="password" placeholder="check once more">
+    </div>
+</div>
+<div class="signup_">
+    <a href="loginfinal.html" target="_blank"><button class="signup" onclick="alert('you have become a valueable user')">Sign up</button></a>
+    </div>
+    <div class="login">
+        Already have an account.
+        <a href="loginfinal.html" target="_blank">Login</a>
+    </div>
+</body>
+</html>
